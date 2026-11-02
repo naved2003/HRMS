@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+.error-text {
+  margin: 12px 0;
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.tab-content {
+  padding-top: 12px;
+}
+
+.apply-section {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+
+  .section-title {
+    margin: 0 0 12px;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.apply-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.apply-form .full-row {
+  grid-column: span 4;
+}
+
+@media (max-width: 960px) {
+  .apply-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .apply-form .full-row {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 540px) {
+  .apply-form {
+    grid-template-columns: 1fr;
+  }
+  .apply-form .full-row {
+    grid-column: span 1;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.actions-col {
+  width: 240px;
+  text-align: right;
+}
+
+.muted {
+  color: #94a3b8;
+}

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Reference the ASP.NET Core shared framework so ApplicationUser can extend
+      IdentityUser<int> (from Microsoft.AspNetCore.Identity.dll, part of the shared
+      framework). Note: FrameworkReference does NOT propagate transitively through
+      ProjectReference, so each downstream project that consumes ASP.NET Core types
+      (Infrastructure for IdentityDbContext, Services for SignInManager/UserManager)
+      must declare its own FrameworkReference.
+    -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

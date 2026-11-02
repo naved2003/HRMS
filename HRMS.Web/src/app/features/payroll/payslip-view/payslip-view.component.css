@@ -1,0 +1,153 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.payslip-dialog {
+  width: 100%;
+}
+
+.payslip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 16px;
+}
+
+.payslip-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payslip-header .brand .brand-icon {
+  color: #1d4ed8;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.payslip-header .brand h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.payslip-body {
+  background: #ffffff;
+  padding: 16px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.info-grid .kv {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-grid .kv .k {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.info-grid .kv .v {
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.breakdown h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.breakdown .table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.breakdown .right {
+  text-align: right;
+}
+
+.breakdown .summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 4px;
+  background: #f8fafc;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.breakdown .summary strong {
+  color: #0f172a;
+}
+
+.net-pay {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 16px;
+  background: #ecfeff;
+  border: 1px solid #a5f3fc;
+  border-radius: 8px;
+}
+
+.net-pay .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0e7490;
+}
+
+.net-pay .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0c4a6e;
+}
+
+.footer-note {
+  margin: 16px 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.muted {
+  color: #94a3b8;
+}
+
+.payslip-loading {
+  padding: 40px;
+  text-align: center;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .breakdown {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

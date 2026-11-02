@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle {
+  margin-left: 12px;
+  font-size: 13px;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.user-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-transform: none;
+
+  .user-name {
+    font-weight: 500;
+  }
+
+  .chevron {
+    margin-left: -4px;
+  }
+}

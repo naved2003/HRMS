@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.error-text {
+  margin: 12px 0;
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.emp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  .emp-avatar {
+    color: #64748b;
+  }
+
+  .emp-name {
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .emp-code {
+    font-size: 12px;
+    color: #64748b;
+  }
+}
+
+.status-select {
+  min-width: 140px;
+}
+
+.time-input {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.actions-col {
+  width: 100px;
+  text-align: right;
+}
+
+.row-dirty {
+  background: #fffbeb;
+}

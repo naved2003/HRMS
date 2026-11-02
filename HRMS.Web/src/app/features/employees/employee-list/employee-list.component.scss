@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.error-text {
+  margin: 12px 0;
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+
+  .search-field {
+    flex: 1 1 280px;
+  }
+
+  .dept-field {
+    flex: 0 1 240px;
+  }
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.emp-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .emp-avatar {
+    color: #64748b;
+  }
+}
+
+.actions-col {
+  width: 120px;
+  text-align: right;
+}
+
+.row-clickable {
+  cursor: pointer;
+}

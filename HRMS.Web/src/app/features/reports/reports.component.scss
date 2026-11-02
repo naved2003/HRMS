@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.card-icon {
+  color: #2563eb;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+}

@@ -1,0 +1,117 @@
+<app-loading-spinner />
+
+<app-page-header
+  title="Dashboard"
+  subtitle="Snapshot of HR operations across your organisation"
+  icon="dashboard"
+>
+  <button mat-stroked-button (click)="dashboardService.load()">
+    <mat-icon>refresh</mat-icon>
+    Refresh
+  </button>
+</app-page-header>
+
+@if (loading()) {
+  <mat-progress-bar mode="indeterminate" color="primary" />
+}
+
+@if (error()) {
+  <p class="error-text">{{ error() }}</p>
+}
+
+<!-- KPI cards row -->
+<section class="kpi-card-grid">
+  @for (kpi of kpis(); track kpi.label) {
+    <mat-card class="kpi-card" appearance="outlined">
+      <mat-card-content class="kpi-card">
+        <span class="kpi-title">{{ kpi.label }}</span>
+        <span class="kpi-value">{{ kpi.value | number }}</span>
+        <mat-icon class="kpi-icon">{{ kpi.icon }}</mat-icon>
+      </mat-card-content>
+    </mat-card>
+  }
+</section>
+
+<!-- Charts row 1: pie chart + bar chart -->
+<section class="dashboard-grid two-col">
+  <!-- Pie chart: Department-wise headcount distribution -->
+  <mat-card class="dashboard-card chart-card">
+    <mat-card-header>
+      <mat-card-title>Department-wise Headcount</mat-card-title>
+      <mat-card-subtitle>Distribution of employees across departments</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      @if (stats()?.departmentWiseCount?.length) {
+        <div class="chart-wrapper">
+          <canvas
+            baseChart
+            [data]="pieData()"
+            [options]="pieChartOptions"
+            [type]="pieChartType"
+          ></canvas>
+        </div>
+      } @else {
+        <app-empty-state
+          message="No headcount data"
+          icon="business"
+          hint="Add departments and employees to see the breakdown."
+        />
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Bar chart: Attendance trend (last 7 days) -->
+  <mat-card class="dashboard-card chart-card">
+    <mat-card-header>
+      <mat-card-title>Attendance Trend (Last 7 days)</mat-card-title>
+      <mat-card-subtitle>Present / Absent / On-leave per day</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      @if (stats()?.attendanceTrend?.length) {
+        <div class="chart-wrapper">
+          <canvas
+            baseChart
+            [data]="barData()"
+            [options]="barChartOptions"
+            [type]="barChartType"
+          ></canvas>
+        </div>
+      } @else {
+        <app-empty-state
+          message="No attendance data"
+          icon="event_busy"
+          hint="Mark attendance to see the trend."
+        />
+      }
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<!-- Charts row 2: doughnut chart (smaller, single column) -->
+<section class="dashboard-grid one-col">
+  <!-- Doughnut chart: Leave status breakdown -->
+  <mat-card class="dashboard-card chart-card small">
+    <mat-card-header>
+      <mat-card-title>Leave Status Breakdown</mat-card-title>
+      <mat-card-subtitle>Distribution of all leave requests by status</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      @if (stats()?.leaveStatusBreakdown) {
+        <div class="chart-wrapper small">
+          <canvas
+            baseChart
+            [data]="doughnutData()"
+            [options]="doughnutChartOptions"
+            [type]="doughnutChartType"
+          ></canvas>
+        </div>
+      } @else {
+        <app-empty-state
+          message="No leave data"
+          icon="beach_access"
+          hint="Leave requests will appear here once applied."
+        />
+      }
+    </mat-card-content>
+  </mat-card>
+</section>

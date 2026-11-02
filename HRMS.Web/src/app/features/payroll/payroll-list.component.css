@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+
+.error-text {
+  margin: 12px 0;
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.total-box {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  background: #ecfeff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #a5f3fc;
+}
+
+.total-box .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #0e7490;
+  letter-spacing: 0.06em;
+}
+
+.total-box .value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0c4a6e;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.actions-col {
+  width: 80px;
+  text-align: right;
+}

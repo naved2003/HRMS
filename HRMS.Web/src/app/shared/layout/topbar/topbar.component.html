@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <button mat-icon-button aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="app-title">HRMS</span>
+  <span class="subtitle">Human Resource Management System</span>
+
+  <span class="flex-spacer"></span>
+
+  @if (user(); as u) {
+    <button
+      mat-button
+      [matMenuTriggerFor]="userMenu"
+      aria-label="User menu"
+      class="user-btn"
+    >
+      <mat-icon>account_circle</mat-icon>
+      <span class="user-name">{{ u.fullName || u.userName }}</span>
+      <mat-icon class="chevron">arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item (click)="onProfile()">
+        <mat-icon>person</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item (click)="onLogout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  } @else {
+    <a mat-button routerLink="/login">
+      <mat-icon>login</mat-icon>
+      <span>Sign In</span>
+    </a>
+  }
+</mat-toolbar>

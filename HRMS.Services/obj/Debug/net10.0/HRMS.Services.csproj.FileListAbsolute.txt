@@ -1,0 +1,17 @@
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Services.deps.json
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Services.dll
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Services.pdb
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Core.dll
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Infrastructure.dll
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Core.pdb
+C:\Users\naved\source\repos\HRMS\HRMS.Services\bin\Debug\net10.0\HRMS.Infrastructure.pdb
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.csproj.AssemblyReference.cache
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.AssemblyInfoInputs.cache
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.AssemblyInfo.cs
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.csproj.CoreCompileInputs.cache
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Ser.161E031D.Up2Date
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.dll
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\refint\HRMS.Services.dll
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\HRMS.Services.pdb
+C:\Users\naved\source\repos\HRMS\HRMS.Services\obj\Debug\net10.0\ref\HRMS.Services.dll

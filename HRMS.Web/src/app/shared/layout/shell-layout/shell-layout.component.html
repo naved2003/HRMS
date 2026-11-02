@@ -1,0 +1,18 @@
+<mat-sidenav-container class="app-shell" autosize>
+  <mat-sidenav
+    #drawer
+    class="app-sidenav"
+    mode="side"
+    opened
+    [fixedInViewport]="true"
+  >
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-content">
+    <app-topbar></app-topbar>
+    <main class="page-container">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

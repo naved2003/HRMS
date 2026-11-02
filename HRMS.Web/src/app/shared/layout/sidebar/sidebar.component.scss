@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px 12px;
+  border-bottom: 1px solid #e2e8f0;
+
+  .brand-icon {
+    color: #2563eb;
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+  }
+
+  .brand-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+  }
+}
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  font-weight: 500;
+  color: #475569;
+
+  &:hover {
+    background: #f1f5f9;
+  }
+
+  &.active-link {
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+  }
+
+  mat-icon {
+    color: inherit;
+  }
+}

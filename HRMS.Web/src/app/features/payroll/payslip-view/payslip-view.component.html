@@ -1,0 +1,113 @@
+<div class="payslip-dialog">
+  @if (payslip(); as slip) {
+    <div class="payslip-header">
+      <div class="brand">
+        <mat-icon class="brand-icon">payments</mat-icon>
+        <div>
+          <h2>HRMS Suite</h2>
+          <p class="muted">Payslip for {{ slip.month }}/{{ slip.year }}</p>
+        </div>
+      </div>
+      <div class="header-actions no-print">
+        <button mat-flat-button color="primary" (click)="print()">
+          <mat-icon>print</mat-icon> Print
+        </button>
+        <button mat-stroked-button (click)="close()">
+          <mat-icon>close</mat-icon> Close
+        </button>
+      </div>
+    </div>
+
+    <div class="payslip-body print-area">
+      <section class="info-grid">
+        <div class="kv">
+          <span class="k">Employee</span>
+          <span class="v">{{ slip.employeeName }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Employee Code</span>
+          <span class="v">{{ slip.employeeCode }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Department</span>
+          <span class="v">{{ slip.departmentName || '—' }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Designation</span>
+          <span class="v">{{ slip.designationName || '—' }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Pay Period</span>
+          <span class="v">{{ slip.payPeriodStart | date: 'mediumDate' }} – {{ slip.payPeriodEnd | date: 'mediumDate' }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Status</span>
+          <span class="v">{{ slip.status }}</span>
+        </div>
+      </section>
+
+      <mat-divider></mat-divider>
+
+      <section class="breakdown">
+        <div class="column">
+          <h3>Earnings</h3>
+          <div class="table-wrapper">
+            <table mat-table [dataSource]="earnings()">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Component</th>
+                <td mat-cell *matCellDef="let r">{{ r.name }}</td>
+              </ng-container>
+              <ng-container matColumnDef="amount">
+                <th mat-header-cell *matHeaderCellDef class="right">Amount</th>
+                <td mat-cell *matCellDef="let r" class="right">{{ '₹' + (r.amount | number) }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="earningsColumns"></tr>
+              <tr mat-row *matRowDef="let r; columns: earningsColumns"></tr>
+            </table>
+          </div>
+          <div class="summary">
+            <span>Total Earnings</span>
+            <strong>{{ '₹' + (slip.totalEarnings | number) }}</strong>
+          </div>
+        </div>
+
+        <div class="column">
+          <h3>Deductions</h3>
+          <div class="table-wrapper">
+            <table mat-table [dataSource]="deductions()">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Component</th>
+                <td mat-cell *matCellDef="let r">{{ r.name }}</td>
+              </ng-container>
+              <ng-container matColumnDef="amount">
+                <th mat-header-cell *matHeaderCellDef class="right">Amount</th>
+                <td mat-cell *matCellDef="let r" class="right">{{ '₹' + (r.amount | number) }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="deductionsColumns"></tr>
+              <tr mat-row *matRowDef="let r; columns: deductionsColumns"></tr>
+            </table>
+          </div>
+          <div class="summary">
+            <span>Total Deductions</span>
+            <strong>{{ '₹' + (slip.totalDeductions | number) }}</strong>
+          </div>
+        </div>
+      </section>
+
+      <mat-divider></mat-divider>
+
+      <section class="net-pay">
+        <div class="label">Net Pay</div>
+        <div class="value">{{ '₹' + (slip.netPay | number) }}</div>
+      </section>
+
+      <p class="footer-note muted">
+        This is a system-generated payslip and does not require a signature.
+      </p>
+    </div>
+  } @else {
+    <div class="payslip-loading">
+      <p>Loading payslip...</p>
+    </div>
+  }
+</div>

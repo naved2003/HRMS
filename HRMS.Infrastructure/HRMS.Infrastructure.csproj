@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      FrameworkReference gives us access to IdentityUser, IdentityRole, UserManager,
+      SignInManager from the Microsoft.AspNetCore.App shared framework.
+    -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      Microsoft.AspNetCore.Identity.EntityFrameworkCore is NOT part of the
+      Microsoft.AspNetCore.App shared framework in modern .NET — it must be
+      added as a NuGet package. Provides IdentityDbContext<ApplicationUser,
+      IdentityRole<int>, int> used by HRMSDbContext.
+      Only Infrastructure references this package (Core uses FrameworkReference
+      for IdentityUser<int>, Services uses FrameworkReference for SignInManager/
+      UserManager), so ApplicationUser is only defined in HRMS.Core.dll — no
+      CS0433 "type exists in both" ambiguity.
+    -->
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HRMS.Core\HRMS.Core.csproj" />
+  </ItemGroup>
+
+</Project>
